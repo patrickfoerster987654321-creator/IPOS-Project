@@ -1,7 +1,7 @@
 def grader(grades):
     with open(grades, 'r') as file:
         line = file.readline()
-        line_split = grades.split(':')
+        line_split = line.split(':')
         name = line_split[0]
         grades = line_split[1]
         grade = 0
@@ -25,5 +25,3 @@ def grader(grades):
         file2.write(combined)
 
     return file2
-    
-
