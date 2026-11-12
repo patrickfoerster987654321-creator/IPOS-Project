@@ -21,7 +21,7 @@ def grader(grades):
 
         grade = grade/count
     with open('completed_grades.txt', 'w') as file2:
-        combined = name + grade
+        combined = f'{name}: {grade: .2f}'
         file2.write(combined)
 
     return file2
