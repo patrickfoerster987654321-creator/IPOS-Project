@@ -1,3 +1,4 @@
-Name: CS: English: Science: Math: Social Studies: World Language: PE:
-Dugan:  F        F        F     D               F               F   A
-
+Name:   CS: English: Science: Math: Social Studies: World Language: PE:
+Dugan:    F        F        F     D               F               F   A
+Patrick:  A        A        A     A               A               A   A
+Jonah:    A        A        A     B               B               A   A
