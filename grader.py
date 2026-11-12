@@ -1,12 +1,13 @@
 def grader(grades):
     with open(grades, 'r') as file:
+        next(file, None)
         line = file.readline()
         line_split = line.split(':')
         name = line_split[0]
         grades = line_split[1]
         grade = 0
         count = 0
-        for char in grades: 
+        for char in grades:
             if char == 'A':
                 grade += 4.0
             elif char == 'B':
