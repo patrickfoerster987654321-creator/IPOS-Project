@@ -1,2 +1,2 @@
-from grader import grader
-grader('grades.txt')
+from grader import grade_reader
+grade_reader('grades.txt')

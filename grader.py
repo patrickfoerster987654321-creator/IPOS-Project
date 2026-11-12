@@ -1,11 +1,13 @@
-def grader(grades):
+def grade_reader(grades):
     with open(grades, 'r') as file:
         next(file, None)
         for line in file:
+            if ':' not in file:
+                continue
             line_split = line.split(':')
-            name = line_split[0]
-            grades = line_split[1]
-            grade = 0
+            name = line_split[0].strip()
+            grades = line_split[1].strip()
+            grade = 0.0
             count = 0
             for char in grades:
                 if char == 'A':
@@ -19,9 +21,12 @@ def grader(grades):
                 elif char == 'E' or char == 'F':
                     grade == 0.0
                 count += 1
-        grade = grade/count
-    with open('completed_grades.txt', 'w') as file2:
-        combined = f'{name}: {grade: .2f}'
-        file2.write(combined)
 
-    return file2
+            if count > 0:
+                gpa = grade/count
+                grade_writer(name, gpa)
+    
+def grade_writer(name, grade):
+    with open('completed_grades.txt', 'w') as file2:
+        combined = f'{name}: {grade: .2f}\n'
+        file2.write(combined)
